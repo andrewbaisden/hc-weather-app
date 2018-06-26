@@ -1,0 +1,14 @@
+:root {
+  --grey: #343436; }
+
+html {
+  font-size: 62.5%;
+  /* font-size 1em = 10px on default browser settings */ }
+
+body {
+  font-size: 1.6rem;
+  background: #bada55; }
+
+.container {
+  max-width: 1300px;
+  width: 100%; }

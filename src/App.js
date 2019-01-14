@@ -11,7 +11,8 @@ class App extends Component {
       data: [],
       weatherToday: '',
       weatherTodayDescription: '',
-      weatherTodayTemp: '',
+      weatherTodayTempC: '',
+      weatherTodayTempF: '',
     };
 
     this.getApi = this.getApi.bind(this);
@@ -36,9 +37,11 @@ class App extends Component {
           const weatherTodayDescription = `${data.list[0].weather[0].description}`;
           this.setState({ weatherTodayDescription });
 
-          const weatherTodayTemp = `${data.list[0].main.temp}`;
-          console.log(weatherTodayTemp);
-          this.setState({ weatherTodayTemp });
+          const weatherTodayTemp = `${data.list[0].wind.deg}`;
+          const tempCelcius = Math.round((weatherTodayTemp - 32) / 1.8);
+          const tempFahrenheit = Math.round(tempCelcius * 1.8 + 32);
+          this.setState({ weatherTodayTempC: tempCelcius });
+          this.setState({ weatherTodayTempF: tempFahrenheit });
         });
         console.log('Response', res);
       })
@@ -49,7 +52,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <div className="weather-today">
           <div className="weather-condition">
             <h1>{this.state.weatherToday}</h1>
@@ -57,8 +60,41 @@ class App extends Component {
             <p>{this.state.weatherTodayDescription}</p>
           </div>
           <div className="weather-temperature">
-            <h1>{this.state.weatherTodayTemp}</h1>
-            <p>{this.state.weatherTodayTemp}</p>
+            <h1>{this.state.weatherTodayTempC}.c</h1>
+            <p>{this.state.weatherTodayTempF}.F</p>
+          </div>
+        </div>
+        <div className="weather-today">
+          <div className="weather-condition">
+            <h1>{this.state.weatherToday}</h1>
+            <img src={clearSky} alt={this.state.weatherTodayDescription} />
+            <p>{this.state.weatherTodayDescription}</p>
+          </div>
+          <div className="weather-temperature">
+            <h1>{this.state.weatherTodayTempC}.c</h1>
+            <p>{this.state.weatherTodayTempF}.F</p>
+          </div>
+        </div>
+        <div className="weather-today">
+          <div className="weather-condition">
+            <h1>{this.state.weatherToday}</h1>
+            <img src={clearSky} alt={this.state.weatherTodayDescription} />
+            <p>{this.state.weatherTodayDescription}</p>
+          </div>
+          <div className="weather-temperature">
+            <h1>{this.state.weatherTodayTempC}.c</h1>
+            <p>{this.state.weatherTodayTempF}.F</p>
+          </div>
+        </div>
+        <div className="weather-today">
+          <div className="weather-condition">
+            <h1>{this.state.weatherToday}</h1>
+            <img src={clearSky} alt={this.state.weatherTodayDescription} />
+            <p>{this.state.weatherTodayDescription}</p>
+          </div>
+          <div className="weather-temperature">
+            <h1>{this.state.weatherTodayTempC}.c</h1>
+            <p>{this.state.weatherTodayTempF}.F</p>
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
 :root {
-  --grey: #343436; }
+  --grey: #343436;
+  --base-font: 'Roboto', sans-serif; }
 
 html {
   font-size: 62.5%;
@@ -7,8 +9,65 @@ html {
 
 body {
   font-size: 1.6rem;
-  background: #bada55; }
+  background: #ffffff;
+  font-family: var(--base-font); }
 
 .container {
-  max-width: 1300px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  max-width: 800px;
   width: 100%; }
+
+.weather-today {
+  display: grid;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f76e18+0,fceb88+100 */
+  background-image: url("../assets/icons/clearSky.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 150px 150px;
+  background-color: #f76e18;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #f76e18 0%, #fceb88 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f76e18 0%, #fceb88 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f76e18 0%, #fceb88 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f76e18', endColorstr='#fceb88', GradientType=0);
+  max-width: 200px;
+  width: 100%;
+  border-radius: 10px; }
+
+.weather-condition {
+  display: grid;
+  text-align: center;
+  justify-items: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 40px; }
+
+.weather-condition h1 {
+  font-size: 1.2rem; }
+
+.weather-condition img {
+  margin: 40px 0 20px 0; }
+
+.weather-temperature {
+  display: grid;
+  align-content: start;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 40px; }
+
+.weather-temperature h1 {
+  font-size: 4rem;
+  margin: 0; }
+
+.weather-bg-img img {
+  width: 200px;
+  overflow: hidden;
+  position: relative;
+  left: 60px; }
